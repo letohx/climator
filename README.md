@@ -13,7 +13,7 @@ Interested in participating in Hacktoberfest? We extend a warm invitation! You a
 
 
 # Announcement 🔊
-Climator is now a open-source project, and we welcome contributions. Information on how to get started can be found in our [contributor guide](CONTRIBUTING.md). 
+Climator is now an open-source project, and we welcome contributions. Information on how to get started can be found in our [contributor guide](CONTRIBUTING.md). 
 <br>
 
 ## Our Goal
