@@ -9,6 +9,7 @@ Interested in participating in Hacktoberfest? We extend a warm invitation! You a
 
 - Hacktoberfest event is happening from October 1, 2023 - October 31, 2023. 🚀
 
+🚀  Your contribution, no matter its size, holds immense value. We eagerly await to see the impact you'll make in our community! 🚀 
 
 ## Our Goal
 
