@@ -22,27 +22,28 @@ class Networks {
     return '${urlDomain}lat=$latitude&lon=$longitude&appid=${getApiKey()}&units=metric';
   }
 
-  dynamic getDataByCity(String cityName) async {
+  Future<Map<dynamic,dynamic>?> getDataByCity(String cityName) async {
     String url = byCity(cityName);
     // print(url);
     http.Response response = await http.get(Uri.parse(url));
     return decodeResponse(response);
   }
 
-  Future<dynamic> getDataByLatLong(double longitude, double latitude) async {
+  Future<Map<dynamic,dynamic>?> getDataByLatLong(double longitude, double latitude) async {
     http.Response response = await http
         .get(Uri.parse(byLatLong(latitude: latitude, longitude: longitude)));
     return decodeResponse(response);
   }
 
-  dynamic decodeResponse(http.Response response) {
-    var resultData;
+  Map<dynamic,dynamic>? decodeResponse(http.Response response) {
+    dynamic resultData;
     if (response.statusCode == 200) {
       resultData = jsonDecode(response.body);
+      print("resultData runtime type: ${resultData.runtimeType}"  );
     } else {
       print("In Decode Response Function");
       print(response.statusCode);
     }
-    return resultData;
+    return resultData as Map<dynamic, dynamic>;
   }
 }

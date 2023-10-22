@@ -5,10 +5,10 @@ class CustomButton extends StatelessWidget {
   final Color borderColor;
   final Color? textColor;
   final FontWeight? fontWeight;
-  final fontSize;
+  final double? fontSize;
   final Color? backgroundColor;
   final String text;
-  final Function() onPressed;
+  final void Function() onPressed;
   final double kBottomMargin;
 
   const CustomButton({
@@ -31,10 +31,10 @@ class CustomButton extends StatelessWidget {
             border: Border.all(
               color: borderColor,
             ),
-            borderRadius: BorderRadius.all(Radius.circular(borderRadius))),
+            borderRadius: const BorderRadius.all(Radius.circular(borderRadius))),
         height: kBottomContainerHeight,
         width: 550,
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         margin: EdgeInsets.only(
             top: 10.0, bottom: kBottomMargin, left: 10, right: 10),
         color: backgroundColor,

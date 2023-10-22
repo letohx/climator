@@ -13,8 +13,8 @@ class WeatherModel {
     return weatherData;
   }
 
-  getCityWeatherData(String city) async {
-    var weatherData;
+  Future<Map<dynamic,dynamic>?> getCityWeatherData(String city) async {
+    Map<dynamic,dynamic>? weatherData = <dynamic,dynamic >{};
     weatherData = await Networks().getDataByCity('$city');
     // print(weatherData['weather'][0]['id']);
     return weatherData;

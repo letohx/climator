@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class WeatherResult extends StatefulWidget {
-  final weatherData;
+  final Map<dynamic, dynamic>? weatherData;
 
   WeatherResult({this.weatherData});
 
@@ -58,21 +58,22 @@ class _WeatherResultState extends State<WeatherResult> {
     imageName = 'rain';
   }
 
-  void updateLocationDetails(dynamic weatherData) async {
+  void updateLocationDetails(Map<dynamic, dynamic>? weatherData) async {
     if (weatherData == null) {
       settingNullValues();
     } else {
-      cond = weatherData['weather'][0]['id'];
+      cond = weatherData['weather'][0]['id'] as int;
       imageName = weatherModel.getWeatherIconName(cond);
-      double temp = weatherData['main']['temp'];
+      double temp = weatherData['main']['temp'] as double;
       temperature = temp.toInt();
-      cityName = weatherData['name'];
-      String tempWeather = weatherData['weather'][0]['description'];
+      cityName = weatherData['name'] as String;
+      String tempWeather = weatherData['weather'][0]['description'] as String;
       weatherMain = tempWeather.toUpperCase();
-      humidityValue = weatherData['main']['humidity'];
+      humidityValue = weatherData['main']['humidity'] as int;
       var speedMeterPerSec = weatherData['wind']['speed']; //meter per seconds
-      windSpeed = (speedMeterPerSec * 3.6).toInt().toDouble();
+      windSpeed = (speedMeterPerSec * 3.6).toInt().toDouble() as double;
       var windDegree = weatherData['wind']['deg'];
+      print("type: ${windDegree.runtimeType}");
       windDirection = degToCompass(windDegree);
     }
   }
@@ -123,18 +124,19 @@ class _WeatherResultState extends State<WeatherResult> {
                       children: [
                         GestureDetector(
                           onTap: () async {
-                            var typedName = await Navigator.push(
+                            final String typedName = await Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
                                   return SearchScreen();
                                 },
                               ),
-                            );
+                            ) as String;
                             print('$typedName');
                             if (typedName != null) {
-                              var weatherData = await weatherModel
-                                  .getCityWeatherData(typedName);
+                              Map<dynamic, dynamic>? weatherData =
+                                  await weatherModel.getCityWeatherData(
+                                      typedName) as Map<dynamic, dynamic>?;
 
                               setState(() {
                                 if (weatherData != null)
@@ -176,8 +178,9 @@ class _WeatherResultState extends State<WeatherResult> {
                         ),
                         GestureDetector(
                           onTap: () async {
-                            var weatherData =
-                                await WeatherModel().getWeatherDataByLatLong();
+                            final Map<dynamic, dynamic>? weatherData =
+                                await WeatherModel().getWeatherDataByLatLong()
+                                    as Map<dynamic, dynamic>?;
                             setState(() {
                               updateLocationDetails(weatherData);
                             });
