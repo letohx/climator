@@ -104,3 +104,4 @@ local.properties
 .gradle/
 pubspec.lock
 .talismanrc
+.metadata
