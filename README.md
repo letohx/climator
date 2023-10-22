@@ -11,6 +11,11 @@ Interested in participating in Hacktoberfest? We extend a warm invitation! You a
 
 🚀  Your contribution, no matter its size, holds immense value. We eagerly await to see the impact you'll make in our community! 🚀 
 
+
+# Announcement 🔊
+Climator is now a open-source project, and we welcome contributions. Information on how to get started can be found in our [contributor guide](CONTRIBUTING.md). 
+<br>
+
 ## Our Goal
 
 The objective of making of this app is to learn about asynchronous programming in Dart. We'll look at how to carry out time consuming tasks such as getting device location and networking to get data from the internet.
@@ -29,9 +34,7 @@ This is weather app inspired by the beautiful designs made by [Valentine Chike](
 - 3D icons by [3D icons](https://uifreebies.net/icon/3d-weather-icons-free)
 - API used from [Open Weather Map](https://openweathermap.org/)
 
-# Announcement 🔊
-Climator is now a open-source project, and we welcome contributions. Information on how to get started can be found in our [contributor guide](CONTRIBUTING.md). 
-<br>
+
 
 
 ### To Check Final App Download:
