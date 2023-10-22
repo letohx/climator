@@ -1,6 +1,4 @@
-enum ConfigKeys {
-  apiKey
-}
+enum ConfigKeys { apiKey }
 
 extension ConfigKeyValues on ConfigKeys {
   String getKeyValue() {

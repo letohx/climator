@@ -45,7 +45,7 @@ class GetStarted extends StatelessWidget {
               CustomButton(
                 text: 'Get Started',
                 kBottomMargin: 40,
-                borderColor:Colors.blue.shade500,
+                borderColor: Colors.blue.shade500,
                 textColor: Colors.blue,
                 onPressed: () {
                   Navigator.push(
