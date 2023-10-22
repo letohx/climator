@@ -14,7 +14,7 @@ class Networks {
   }
 
   String getApiKey() {
-    Config config = Config.manager;
+    final Config config = Config.manager;
     return config.get(ConfigKeys.apiKey);
   }
 

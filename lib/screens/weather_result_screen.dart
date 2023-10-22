@@ -12,6 +12,9 @@ import 'package:flutter/material.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../config/config.dart';
+import '../config/config_keys.dart';
+
 class WeatherResult extends StatefulWidget {
   final Map<dynamic, dynamic>? weatherData;
 
@@ -37,9 +40,11 @@ class _WeatherResultState extends State<WeatherResult> {
   late int cond;
   late String windDirection;
 
+  final Config config = Config.manager;
+
   @override
   void initState() {
-    kCustomButtonString = 'Made with ☃ By 🌀 Binni G. 🌀';
+    kCustomButtonString = 'Made with ☃ By 🌀 Climator Team 🌀';
     settingNullValues();
     locationOn = const IconData(0xe3ab, fontFamily: 'MaterialIcons');
     updateLocationDetails(widget.weatherData);
@@ -278,8 +283,7 @@ class _WeatherResultState extends State<WeatherResult> {
                       textColor: Colors.blue,
                       onPressed: () async {
                         try {
-                          String url =
-                              "https://www.linkedin.com/in/binni-goel/";
+                          final String url = config.get(ConfigKeys.teamId);
                           await launchUrl(Uri.parse(url));
                         } catch (e) {
                           print("Error in launching url $e");
